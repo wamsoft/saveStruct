@@ -349,7 +349,7 @@ NCB_ATTACH_CLASS(DictAdd, Dictionary) {
 /**
  * メソッド追加用
  */
-static class ScriptsAdd {
+class ScriptsAdd {
 	
 public:
 	ScriptsAdd(){;}
