@@ -49,6 +49,8 @@ static tjs_int getArrayCount(iTJSDispatch2 *array) {
 	}
 	if (TJS_SUCCEEDED(ArrayCountProp->PropGet(0, NULL, NULL, &result, array))) {
 		count = result;
+	} else if (TJS_SUCCEEDED(Try_iTJSDispatch2_PropGet(array, 0, TJS_W("count"), 0, &result, array))) {
+		count = result;
 	}
 	return count;
 }
