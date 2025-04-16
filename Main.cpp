@@ -56,7 +56,7 @@ static tjs_int getArrayCount(iTJSDispatch2 *array) {
 }
 
 // Array.func 呼び出し
-static inline tjs_error invokeArrayFunc(iTJSDispatch2 *array, iTJSDispatch2* &func, tjs_char *const method,
+static inline tjs_error invokeArrayFunc(iTJSDispatch2 *array, iTJSDispatch2* &func, const tjs_char *method,
 								 tTJSVariant *result, tjs_int numparams, tTJSVariant **param)
 {
 	if (!func) {
@@ -319,7 +319,7 @@ public:
 						   numparams > 2 ? (int)*param[2] : 0
 						   );
 		writer.hex = true;
-		getDictString(objthis, &writer, numparams > 3 ? (int)*param[3] : 0);
+		getDictString(objthis, (IWriter *)&writer, numparams > 3 ? (int)*param[3] : 0);
 		return TJS_S_OK;
 	}
 	
@@ -336,7 +336,7 @@ public:
 		if (result) {
 			IStringWriter writer(TJS_PARAM_EXIST(0) ? (int)*param[0] : 1);
 			writer.hex = true;
-			getDictString(objthis, &writer, numparams > 1 ? (int)*param[1] : 0);
+			getDictString(objthis, (IWriter *)&writer, numparams > 1 ? (int)*param[1] : 0);
 			*result = writer.buf;
 		}
 		return TJS_S_OK;
