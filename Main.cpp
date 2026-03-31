@@ -56,7 +56,7 @@ static tjs_int getArrayCount(iTJSDispatch2 *array) {
 }
 
 // Array.func 呼び出し
-static inline tjs_error invokeArrayFunc(iTJSDispatch2 *array, iTJSDispatch2* &func, tjs_char *const method,
+static inline tjs_error invokeArrayFunc(iTJSDispatch2 *array, iTJSDispatch2* &func, const tjs_char *method,
 								 tTJSVariant *result, tjs_int numparams, tTJSVariant **param)
 {
 	if (!func) {
