@@ -20,7 +20,7 @@ class Array {
 	function saveStruct2(filename, utf8=false, newline=0, option=0);
 
 	/**
-	 * @param 改行コード newline 0:CRLF 1:LF
+	 * @param newline 改行コード 0:CRLF 1:LF
 	 * @param option 整形オプション sso* の組み合わせ（後述）もしくは直接数値指定
 	 * @return saveStruct に準じた形の文字列を返す
 	 */
